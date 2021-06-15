@@ -1,4 +1,3 @@
-#!/usr/bin/env node
-import { convertRecording } from "./src/recorder.js";
+import { greet } from "./src/recorder.ts";
 
-convertRecording();
+greet();
