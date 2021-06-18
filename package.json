@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/TrickyTroll/puppeteer-asciicast-converter#readme",
   "devDependencies": {
+    "@types/node": "^15.12.3",
     "filehound": "^1.17.4",
     "puppeteer": "^10.0.0",
     "tslint": "^6.1.3",
