@@ -1,15 +1,23 @@
 // @ts-ignore
-import { walk } from "https://deno.land/std@0.99.0/fs/mod.ts";
+import fs from 'fs';
+import * as path from 'path';
 
 function getRecordings(projectPath: string): Array<string> {
   const allPaths: Array<string> = [];
-  for await (const file of walk(projectPath, {
-    maxDepth: 3,
-    includeDirs: false,
-    exts: [".json", ".cast"],
-  })) {
-    allPaths.push(file);
-  }
-
-  return allPaths;
+  let files: Array<string> = fs.readdirSync(projectPath)
+  files.forEach((file) => {
+      if (checkIfRecording(file)) {
+          allPaths.push(file)
+      }
+  })
+  return allPaths
 }
+
+function checkIfRecording(filePath: string): boolean {
+    if (path.extname(filePath) === ".json" && path.dirname(filePath) === "asciicasts") {
+        return true
+    }
+    return false
+}
+
+export { getRecordings }
