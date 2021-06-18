@@ -14,6 +14,7 @@ function getRecordings(projectPath: string): Array<string> {
 }
 
 function checkIfRecording(filePath: string): boolean {
+    console
     if (path.extname(filePath) === ".json" && path.dirname(filePath) === "asciicasts") {
         return true
     }
