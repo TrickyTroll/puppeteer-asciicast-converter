@@ -1,5 +1,5 @@
 // @ts-ignore
-import puppeteer from "https://deno.land/x/puppeteer@9.0.1/mod.ts";
+import puppeteer from "puppeteer";
 
 async function convertRecording(
   jsonPath: string,
