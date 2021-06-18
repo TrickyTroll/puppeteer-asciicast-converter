@@ -1,0 +1,28 @@
+{
+  "name": "puppeteer-asciicast-converter",
+  "version": "0.1.0",
+  "description": "Convert Asciicast recordings using Puppeteer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrickyTroll/puppeteer-asciicast-converter.git"
+  },
+  "keywords": [
+    "Gifs",
+    "Asciinema",
+    "Recording",
+    "Good-bot"
+  ],
+  "author": "Etienne Parent",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TrickyTroll/puppeteer-asciicast-converter/issues"
+  },
+  "homepage": "https://github.com/TrickyTroll/puppeteer-asciicast-converter#readme",
+  "devDependencies": {
+    "typescript": "^4.3.4"
+  }
+}
