@@ -12,16 +12,30 @@ function getAllRecordings(projectPath: string): Array<string> {
       // For each file contained in a scene:
       let isDir: boolean = fs.lstatSync(file).isDirectory();
       if (file.includes("asciicasts") && isDir) {
-          let allRecs: Array<string> = [];
+          allPaths.concat(getSceneRecordings(file));
       }
   });
-  let files: Array<string> = fs.readdirSync();
-  files.forEach((file) => {
-      if (checkIfRecording(file)) {
-          allPaths.push(file)
-      }
-  })
   return allPaths
+}
+
+/**
+ * Checks a recordings directory and returns a list of paths towards
+ * each `asciinema` recording it contains.
+ * 
+ * @param sceneRecDir A path from which recordings should be fetched.
+ *   Should be absolute or relative to the project's path.
+ * @returns All recordings contained by a certain scene.
+ */
+function getSceneRecordings(sceneRecDir: string): Array<string> {
+    let sceneRecs: Array<string> = [];
+    let files: Array<string> = fs.readdirSync(sceneRecDir);
+    files.forEach((file) => {
+        if (checkIfRecording(file)) {
+            sceneRecs.push(file)
+        }
+    })
+
+    return sceneRecs
 }
 
 /**
@@ -54,9 +68,10 @@ function getAllScenes(projectPath: string): Array<string> {
     const allScenes: Array<string> = [];
     let files: Array<string> = fs.readdirSync(projectPath)
     files.forEach((file) => {
-        let isDir: boolean = fs.lstatSync(file).isDirectory() 
+        let fullPath: string = projectPath + "/" + file
+        let isDir: boolean = fs.lstatSync(projectPath).isDirectory() 
         if (file.includes("scene_") && isDir) {
-            allScenes.push(file)
+            allScenes.push(projectPath)
         }
     })
     return allScenes
