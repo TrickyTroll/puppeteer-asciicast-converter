@@ -20,6 +20,16 @@ function checkIfRecording(scenePath: string): boolean {
     return false
 }
 
+/**
+ * Get all scenes from a certain project. A scene is a directory at the
+ * root of the project path that contains `scene_` in its name.
+ * 
+ * @param projectPath The path towards the project from which the scenes
+ *   will be fetched.
+ * @returns A list of directories that contain `scene_` in their name. I
+ *   assume that this is enough checks to determine if something is a
+ *   scene for now.
+ */
 function getAllScenes(projectPath: string): Array<string> {
     const allScenes: Array<string> = [];
     let files: Array<string> = fs.readdirSync(projectPath)
