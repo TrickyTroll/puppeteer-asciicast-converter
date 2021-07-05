@@ -69,9 +69,9 @@ function getAllScenes(projectPath: string): Array<string> {
     let files: Array<string> = fs.readdirSync(projectPath)
     files.forEach((file) => {
         let fullPath: string = projectPath + "/" + file
-        let isDir: boolean = fs.lstatSync(projectPath).isDirectory() 
+        let isDir: boolean = fs.lstatSync(fullPath).isDirectory() 
         if (file.includes("scene_") && isDir) {
-            allScenes.push(projectPath)
+            allScenes.push(fullPath)
         }
     })
     return allScenes
