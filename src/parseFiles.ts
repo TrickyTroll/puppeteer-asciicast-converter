@@ -13,12 +13,23 @@ function getRecordings(projectPath: string): Array<string> {
   return allPaths
 }
 
-function checkIfRecording(filePath: string): boolean {
-    console
-    if (path.extname(filePath) === ".json" && path.dirname(filePath) === "asciicasts") {
+function checkIfRecording(scenePath: string): boolean {
+    if (path.extname(scenePath) === ".cast" && path.dirname(scenePath) === "asciicasts") {
         return true
     }
     return false
+}
+
+function getAllScenes(projectPath: string): Array<string> {
+    const allScenes: Array<string> = [];
+    let files: Array<string> = fs.readdirSync(projectPath)
+    files.forEach((file) => {
+        let isDir: boolean = fs.lstatSync(file).isDirectory() 
+        if (file.includes("scene_") && isDir) {
+            allScenes.push(file)
+        }
+    })
+    return allScenes
 }
 
 export { getRecordings }
