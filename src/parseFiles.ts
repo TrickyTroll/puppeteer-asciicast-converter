@@ -2,6 +2,9 @@
 import fs from 'fs';
 import * as path from 'path';
 
+// The name of the directory where the recordings are saved. 
+const recordingsDirectory: string = "asciicasts"
+
 function getRecordings(projectPath: string): Array<string> {
   const allPaths: Array<string> = [];
   let files: Array<string> = fs.readdirSync(projectPath)
@@ -23,7 +26,7 @@ function getRecordings(projectPath: string): Array<string> {
  *   the `recordingsDirectory`.
  */
 function checkIfRecording(filePath: string): boolean {
-    if (path.extname(filePath) === ".cast" && path.dirname(filePath) === "asciicasts") {
+    if (path.extname(filePath) === ".cast" && path.dirname(filePath) === recordingsDirectory) {
         return true
     }
     return false
