@@ -5,7 +5,7 @@ import * as path from 'path';
 // The name of the directory where the recordings are saved. 
 const recordingsDirectory: string = "asciicasts"
 
-function getRecordings(projectPath: string): Array<string> {
+function getAllRecordings(projectPath: string): Array<string> {
   const allPaths: Array<string> = [];
   let files: Array<string> = fs.readdirSync(projectPath)
   files.forEach((file) => {
@@ -54,4 +54,4 @@ function getAllScenes(projectPath: string): Array<string> {
     return allScenes
 }
 
-export { getRecordings }
+export { getAllRecordings as getRecordings }
