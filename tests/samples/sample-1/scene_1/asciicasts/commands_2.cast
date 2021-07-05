@@ -1,0 +1,11 @@
+{"version": 2, "width": 80, "height": 24, "timestamp": 1625507662, "env": {"SHELL": null, "TERM": "linux"}}
+[1.051807, "o", "root@5b5f4fe4e159:/app# "]
+[1.258805, "o", "l"]
+[1.476721, "o", "s"]
+[1.532899, "o", " "]
+[1.735119, "o", "-"]
+[1.923124, "o", "a"]
+[2.134884, "o", "\r\n"]
+[2.178957, "o", "\u001b[0m\u001b[01;34m.\u001b[0m                   Dockerfile.dev  .gitpod.yml  pyproject.toml\r\r\n\u001b[01;34m..\u001b[0m                  \u001b[01;34mexamples\u001b[0m        \u001b[01;34mgoodbot\u001b[0m      README.md\r\r\nCONTRIBUTING.md     \u001b[01;34m.git\u001b[0m            \u001b[01;34mimg\u001b[0m          .replit\r\r\n"]
+[2.179959, "o", "docker-compose.yml  \u001b[01;34m.github\u001b[0m         LICENSE      requirements.txt\r\r\nDockerfile          .gitignore      mypy.ini     \u001b[01;34mtests\u001b[0m\r\r\n"]
+[2.183722, "o", "root@5b5f4fe4e159:/app# "]
