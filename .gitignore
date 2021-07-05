@@ -21,9 +21,6 @@ toto/
 *.jpg
 *.jpeg
 
-# Samples folder
-samples/
-
 # Python venv
 .venv/
 
