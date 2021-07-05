@@ -7,7 +7,15 @@ const recordingsDirectory: string = "asciicasts"
 
 function getAllRecordings(projectPath: string): Array<string> {
   const allPaths: Array<string> = [];
-  let files: Array<string> = fs.readdirSync(projectPath)
+  let scenes: Array<string> = getAllScenes(projectPath);
+  scenes.forEach((file) => {
+      // For each file contained in a scene:
+      let isDir: boolean = fs.lstatSync(file).isDirectory();
+      if (file.includes("asciicasts") && isDir) {
+          let allRecs: Array<string> = [];
+      }
+  });
+  let files: Array<string> = fs.readdirSync();
   files.forEach((file) => {
       if (checkIfRecording(file)) {
           allPaths.push(file)
