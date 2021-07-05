@@ -13,8 +13,17 @@ function getRecordings(projectPath: string): Array<string> {
   return allPaths
 }
 
-function checkIfRecording(scenePath: string): boolean {
-    if (path.extname(scenePath) === ".cast" && path.dirname(scenePath) === "asciicasts") {
+/**
+ * 
+ * @param filePath The path towards the file that will be checked.
+ *   The path can be relative, and should be provided by the
+ *   `getSceneRecordings()` function.
+ * @returns Whether or not the file is a recordings. To qualify as
+ *   a recording, a file must have the `.cast` extension and be in
+ *   the `recordingsDirectory`.
+ */
+function checkIfRecording(filePath: string): boolean {
+    if (path.extname(filePath) === ".cast" && path.dirname(filePath) === "asciicasts") {
         return true
     }
     return false
