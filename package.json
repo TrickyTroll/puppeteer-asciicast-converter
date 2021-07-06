@@ -1,5 +1,6 @@
 {
   "name": "puppeteer-asciicast-converter",
+  "type": "module",
   "version": "0.1.0",
   "description": "Convert Asciicast recordings using Puppeteer.",
   "main": "index.js",
