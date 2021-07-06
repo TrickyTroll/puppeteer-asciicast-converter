@@ -64,7 +64,7 @@ function checkIfRecording(filePath: string): boolean {
  *   assume that this is enough checks to determine if something is a
  *   scene for now.
  */
-function getAllScenes(projectPath: string): Array<string> {
+export function getAllScenes(projectPath: string): Array<string> {
     const allScenes: Array<string> = [];
     let files: Array<string> = fs.readdirSync(projectPath)
     files.forEach((file) => {
@@ -76,5 +76,3 @@ function getAllScenes(projectPath: string): Array<string> {
     })
     return allScenes
 }
-
-export { getAllRecordings as getRecordings }
