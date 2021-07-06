@@ -14,3 +14,8 @@ test("Recordings checker on a txt file.", () => {
     let isRecording = parseFiles.checkIfRecording("./tests/samples/sample-1/scene_1/read/read_1.txt")
     expect(!isRecording)
 })
+
+test("Getting scene recordings find enough elements.", () => {
+    let scene1Recordings = parseFiles.getSceneRecordings("./tests/samples/sample-1/scene_2")
+    expect((scene1Recordings.length) === 1)
+})
