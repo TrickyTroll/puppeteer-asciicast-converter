@@ -39,6 +39,9 @@ export function getSceneRecordings(sceneRecDir: string): Array<string> {
 }
 
 /**
+ * Checks if a file is an `asciinema` recording or not. This is
+ * done by checking if the file has a `.cast` extension and if
+ * it's in the `recordingsDirectory`.
  * 
  * @param filePath The path towards the file that will be checked.
  *   The path can be relative, and should be provided by the
