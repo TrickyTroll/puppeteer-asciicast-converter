@@ -5,7 +5,7 @@ import * as path from 'path';
 // The name of the directory where the recordings are saved. 
 const recordingsDirectory: string = "asciicasts"
 
-function getAllRecordings(projectPath: string): Array<string> {
+export function getAllRecordings(projectPath: string): Array<string> {
   const allPaths: Array<string> = [];
   let scenes: Array<string> = getAllScenes(projectPath);
   scenes.forEach((file) => {
@@ -26,7 +26,7 @@ function getAllRecordings(projectPath: string): Array<string> {
  *   Should be absolute or relative to the project's path.
  * @returns All recordings contained by a certain scene.
  */
-function getSceneRecordings(sceneRecDir: string): Array<string> {
+export function getSceneRecordings(sceneRecDir: string): Array<string> {
     let sceneRecs: Array<string> = [];
     let files: Array<string> = fs.readdirSync(sceneRecDir);
     files.forEach((file) => {
@@ -47,7 +47,7 @@ function getSceneRecordings(sceneRecDir: string): Array<string> {
  *   a recording, a file must have the `.cast` extension and be in
  *   the `recordingsDirectory`.
  */
-function checkIfRecording(filePath: string): boolean {
+export function checkIfRecording(filePath: string): boolean {
     if (path.extname(filePath) === ".cast" && path.dirname(filePath) === recordingsDirectory) {
         return true
     }
